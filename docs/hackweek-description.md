@@ -49,11 +49,6 @@ on open source software.
 The arm completes a pick-and-place task autonomously in at least 7 out of 10 attempts, orchestrated by an AI agent
 with no cloud services involved — a concrete showcase of private AI at the edge on a SUSE stack.
 
-## Follow along live 🎥
-
-I'll stream the work all week: recording demonstrations, failed grasps, training results, the agent driving the arm.
-Link: [TODO]
-
 # Resources
 
 - [slack channel #project-suse-robotics](https://suse.slack.com/archives/C0A09ULMPQX)
