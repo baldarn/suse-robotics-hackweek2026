@@ -145,26 +145,11 @@ Un minimo di infrastruttura (K3s, Fleet, Grafana) è incluso **solo se costa poc
     policy server (ACT occupa poco). Scelta del modello lasciata al builder, con una prova comparativa.
   - Il server MCP espone anche un trasporto HTTP; Open WebUI lo usa come tool server.
   - Claude Code resta il client di riferimento e il fallback: se il modello locale non è affidabile,
-    la demo usa Claude e il confronto locale/cloud diventa contenuto per la diretta.
+    la demo usa Claude e il confronto locale/cloud finisce nel README.
 
 ### Sicurezza
 - Arresto immediato sempre disponibile (tool `stop` + scollegare l'alimentazione del follower).
 - Limiti di coppia/velocità ragionevoli in inferenza; nessuna persona nello spazio di lavoro durante i test autonomi.
-
-## Dirette live
-
-L'utente vuole fare dirette live del lavoro per tutta la settimana. Conseguenze (*mie scelte*):
-- **Scena** (OBS sul desktop, encoding NVENC sulla 3090 — non compete in modo significativo con training/inferenza CUDA):
-  terza camera sul braccio + schermo + vista camere della policy (rerun) + dashboard Grafana.
-- **Overlay di stato** leggibile in diretta: compito in corso, policy/versione, contatore successi della valutazione.
-  Si può ricavare dalle stesse metriche Prometheus.
-- **Segreti fuori dallo schermo**: token Hugging Face, chiavi API dell'agente, kubeconfig in file `.env`/secret,
-  mai stampati nel terminale; scena "pausa" per quando serve mostrarli o configurarli.
-- **Episodi lunghi senza tempi morti**: registrazione dataset e valutazioni sono buon contenuto live;
-  il training notturno no (fuori diretta, recap il giorno dopo con le curve di loss).
-- I video registrati delle dirette sono la materia prima per il video demo finale.
-- Setup e prova della diretta rientrano nella preparazione (17–29 nov).
-- Piattaforma (Twitch/YouTube/altro) e orari: scelta dell'utente, non influiscono sul resto del design.
 
 ## Calendario
 

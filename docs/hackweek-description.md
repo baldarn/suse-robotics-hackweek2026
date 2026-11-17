@@ -28,7 +28,8 @@ on open source software.
 - Teleoperate the arm, record demonstrations, train an imitation-learning policy (ACT) with Hugging Face LeRobot on a local GPU.
 - Run the robot node on a Raspberry Pi 5 with openSUSE / SLE Micro and K3s; policy inference served from a GPU machine on the LAN.
 - A local open-weights LLM (Ollama + Open WebUI, the building blocks of SUSE AI) drives the robot through an MCP server:
-  "put the cube in the box and check you did it".
+  "put the cube in the box and check you did it". If local models aren't reliable enough at tool calling yet,
+  Claude is the fallback agent, through the same MCP server.
 - Ship new policy versions to the robot fleet via GitOps with Fleet; live motor telemetry in Grafana.
 
 ## Deliverables
@@ -40,14 +41,16 @@ on open source software.
 3. **Edge deployment templates**
    - K3s manifests, Fleet GitOps setup, Grafana dashboard, plus a simulated robot to demo fleet-wide updates.
 4. **Private AI agent demo**
-   - Comparison of local open models vs a cloud model on the same robot-control scenario.
+   - Comparison of local open models vs Claude on the same robot-control scenario.
 5. **Published results**
    - Open datasets and models on Hugging Face, evaluation reports, demo video.
 
 ## Outcome
 
-The arm completes a pick-and-place task autonomously in at least 7 out of 10 attempts, orchestrated by an AI agent
-with no cloud services involved — a concrete showcase of private AI at the edge on a SUSE stack.
+The arm completes a pick-and-place task autonomously in at least 7 out of 10 attempts, orchestrated by an AI agent.
+The goal is a fully local stack with no cloud services involved — a concrete showcase of private AI at the edge on a
+SUSE stack. If no local model drives the robot reliably, the demo uses Claude as the agent, and the
+local-vs-cloud comparison is published as part of the results.
 
 # Resources
 
